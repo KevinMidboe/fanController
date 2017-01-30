@@ -8,7 +8,7 @@ Since I was young I have always been obsessed with motors. Using motors to contr
 I have rewritten the software several times, and just landed on what just worked so I could get back to procrastinating before my exams. You can check the Arduino code out, I will make sure to comment it well.
 
 
-## Partlist
+## Parts list
 Under is a list of all the parts I have yet used for this projects. Some I have links to, others I have just found laying around or made out of some random junk. If there are any questions about the items please send me a email. [MAIL](https://google.com)
 
 Part | Part name | Usage | Link
