@@ -3,7 +3,7 @@
 
 ## the Idea
 Since I was young I have always been obsessed with motors. Using motors to control crazy mondane things. *Not because it was hard, but because I could.* So to continue that trend I wanted to be able to control me two roller curtains over my bed. I started prototyping with a Arduino and a couple servos and I now have it up and running. 
->>A little caviate. It is working, but only the one curtain can be lifted again, it has no automation and no wireless connectivity. Needs to be done!
+> A little caviate. It is working, but only the one curtain can be lifted again, it has no automation and no wireless connectivity. Needs to be done!
 
 I have rewritten the software several times, and just landed on what just worked so I could get back to procrastinating before my exams. You can check the Arduino code out, I will make sure to comment it well.
 
