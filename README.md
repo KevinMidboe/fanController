@@ -27,6 +27,7 @@ If you want the server to launch at login to the following:
 
 ## Parts list
 Under is a list of all the parts I have yet used for this projects. Some I have links to, others I have just found laying around or made out of some random junk. If there are any questions about the items please send me a email. [MAIL](https://google.com)
+
 Part | Part name | Usage | Link
 ---|---|---|---
 Stepper motor | Motor: 28BYJ-48 Board: ULN2003 | Rotate curtain | [ebay](https://goo.gl/tHQHP3 "ebay.com Stepper Motors")
