@@ -1,1 +1,2 @@
 # fanController
+## API of fanController
