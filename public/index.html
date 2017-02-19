@@ -9,22 +9,23 @@
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="images/manifest.json">
-<link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="images/favicon.ico">
-<meta name="msapplication-config" content="images/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
- <meta content="yes" name="apple-mobile-web-app-capable" />
-  <meta content="black-translucent" id="status_bar" name="apple-mobile-web-app-status-bar-style" />
+		<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="images/manifest.json">
+		<link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<meta name="msapplication-config" content="images/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+ 		<meta content="yes" name="apple-mobile-web-app-capable" />
+  	<meta content="black-translucent" id="status_bar" name="apple-mobile-web-app-status-bar-style" />
 
-  <script type="text/javascript">
-    if(!navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)){
-      document.getElementById("status_bar").content = "black-translucent";
-    }
-  </script>
+  	<script type="text/javascript">
+    	if(!navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)){
+      	document.getElementById("status_bar").content = "black-translucent";
+    	}
+    </script>
+
 		<style type="text/css">
 			html * {
 				font-family: 'Ubuntu', sans-serif !important;
@@ -82,11 +83,10 @@
 			</div>
 			
 			<hr>
-			<div class="state_display">
-                                <h4>Current fan state:</h4>
-                                <span id="state">ON</span>
-                        </div>
-
+				<div class="state_display">
+          <h4>Current fan state:</h4>
+          <span id="state">ON</span>
+				</div>
 			<hr>
 
 			<div style="text-align:center;">
@@ -104,6 +104,7 @@
 			</p>
 			<img src="images/chip.png" style="width: 60px;" />
 	</body>
+
 	<script type="text/javascript">
 		function UserAction(state) {
 			var xhttp = new XMLHttpRequest();
@@ -111,7 +112,7 @@
 			xhttp.setRequestHeader("Content-type", "application/text");
 			xhttp.send();
 			console.log(xhttp.status)
-			if (xhttp.status == "200") {
+			if (xhttp.status == "200" && xhttp.responseText != 'none') {
 				var stateDisplay = document.getElementById('state');
 				stateDisplay.innerText = xhttp.responseText.toUpperCase();
 			}
