@@ -26,7 +26,7 @@ app.get('/state', function(req, res) {
 app.post('/on', function (req, res) {
 	console.log("Got a POST request for ON");
 
-	PythonShell.run('led-csid0-on.py', function (err) {
+	PythonShell.run('pyscripts/led-csid0-on.py', function (err) {
 	if (err) throw err;
 		console.log('finished');
 	});
@@ -36,7 +36,7 @@ app.post('/on', function (req, res) {
 app.post('/off', function (req, res) {
 	console.log("Got a POST request for OFF");
 
-	PythonShell.run('led-csid0-off.py', function (err) {
+	PythonShell.run('pyscripts/led-csid0-off.py', function (err) {
 	if (err) throw err;
 		console.log('finished');
 	});
