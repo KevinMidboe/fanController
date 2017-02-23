@@ -21,7 +21,6 @@ app.get('/state', function(req, res) {
 
 	PythonShell.run('scripts/fanController.py', options, function (err, results) {
   	if (err) throw err;
-
   	if (results[0] == true)
   		res.send('on')
   	else
@@ -37,8 +36,8 @@ app.post('/on', function (req, res) {
 	};
 
 	PythonShell.run('scripts/fanController.py', options, function (err, results) {
-  	if (err) throw err;
-  	
+  	if (err) throw err;	  	
+
   	if (results[0] == true)
   		res.send('on')
   	else

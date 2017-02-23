@@ -40,7 +40,7 @@ def turnFanOFF():
 
 
 if __name__ == '__main__':
-	arg = argv[1]
+	arg = argv[-1]
 	if (arg == 'on'):
 		print(turnFanON())
 	elif (arg == 'off'):
