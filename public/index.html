@@ -18,63 +18,15 @@
 		<meta name="msapplication-config" content="images/browserconfig.xml">
 		<meta name="theme-color" content="#ffffff">
  		<meta content="yes" name="apple-mobile-web-app-capable" />
-  	<meta content="black-translucent" id="status_bar" name="apple-mobile-web-app-status-bar-style" />
+  		<meta content="black-translucent" id="status_bar" name="apple-mobile-web-app-status-bar-style" />
 
-  	<script type="text/javascript">
-    	if(!navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)){
-      	document.getElementById("status_bar").content = "black-translucent";
-    	}
-    </script>
+	  	<script type="text/javascript">
+	    	if(!navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)){
+	      	document.getElementById("status_bar").content = "black-translucent";
+	    	}
+	    </script>
 
-		<style type="text/css">
-			html * {
-				font-family: 'Ubuntu', sans-serif !important;
-			}
-			.myContainer {
-				margin-top: 85px;
-				margin-left: auto;
-				margin-right: auto;
-				width: 100%;
-			}
-			.myBg {
-				background-color: #eee;
-			}
-			.btn {
-				height: 60px;
-				width: 120px;
-				
-				margin-right: 10px;
-				margin-left: 10px;
-			}
-			.state_display {
-				height: 150px;
-				width: 80%;
-				margin-top: 70px;
-				margin-left: auto;
-				margin-right: auto;
-				padding-top: 45px;
-				background-color: white;
-				
-				border-style: solid;
-				border-width: 0px;
-				border-radius: 4px;
-
-				text-align: center;
-				font-size: 40px;
-			}
-			.state_display h4 {
-				position: absolute;
-				margin-top: -70px;
-			}
-			.footer {
-				width: 100%;
-				margin: 0 auto;
-				position: fixed;
-    		bottom: 0;
-    		padding-bottom: 15px;
-    		text-align: center;
-			}
-		</style>
+	    <link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body class="myBg">
 		<div class="myContainer">
@@ -105,28 +57,5 @@
 			<img src="images/chip.png" style="width: 60px;" />
 	</body>
 
-	<script type="text/javascript">
-		function UserAction(state) {
-			var xhttp = new XMLHttpRequest();
-			xhttp.open("POST", state, false);
-			xhttp.setRequestHeader("Content-type", "application/text");
-			xhttp.send();
-			console.log(xhttp.status)
-			if (xhttp.status == "200" && xhttp.responseText != 'none') {
-				var stateDisplay = document.getElementById('state');
-				stateDisplay.innerText = xhttp.responseText.toUpperCase();
-			}
-		}
-
-		window.onload = function() {
-			var xhttp = new XMLHttpRequest();
-			xhttp.open("GET", "state", false);
-			xhttp.send();
-
-			if (xhttp.status == "200") {
-				var stateDisplay = document.getElementById('state');
-				stateDisplay.innerText = xhttp.responseText.toUpperCase();
-			}
-		}
-	</script>
+	<script type="text/javascript" src="main.js"></script>
 </html>
