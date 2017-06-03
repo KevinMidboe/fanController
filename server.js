@@ -72,5 +72,5 @@ var server = app.listen(3000, function () {
 	  pythonOptions: ['-u'],
 	  args: 'reload'
 	};
-	PythonShell.run('scripts/fanController.py', options);
+	PythonShell.run('scripts/fanController.py', options, function (err, results) {});
 })
