@@ -38,6 +38,11 @@ def turnFanOFF():
 		GPIO.output("CSID0", GPIO.LOW) #set CSID0 (LED) HIGH (On)
 		return '1'
 
+def reloadFanstate():
+	if (getFanstate()):
+		turnFanON()
+	else: 
+		turnFanOFF()
 
 if __name__ == '__main__':
 	arg = argv[-1]
@@ -47,5 +52,7 @@ if __name__ == '__main__':
 		print(turnFanOFF())
 	elif (arg == 'get'):
 		print(getFanstate())
+	elif (arg == 'reload'):
+		reloadFanstate()
 	else:
 		print("Invalid input")
