@@ -44,7 +44,6 @@ def reloadFanstate():
 	if getFanstate():
 		GPIO.output("CSID0", GPIO.HIGH) #set CSID0 (Relay) HIGH (On)
 	else:
-		updateFanstate(1)
 		GPIO.output("CSID0", GPIO.LOW) #set CSID0 (Relay) LOW (Off)
 
 if __name__ == '__main__':
