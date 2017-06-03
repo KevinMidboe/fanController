@@ -28,21 +28,24 @@ def turnFanON():
 	if not getFanstate():
 		updateFanstate(1)
 		GPIO.setup("CSID0", GPIO.OUT)   #set CSID0 as an output
-		GPIO.output("CSID0", GPIO.HIGH) #set CSID0 (LED) HIGH (On)
+		GPIO.output("CSID0", GPIO.HIGH) #set CSID0 (Relay) HIGH (On)
 		return '1'
 
 def turnFanOFF():
 	if getFanstate():
 		updateFanstate(0)
 		GPIO.setup("CSID0", GPIO.OUT)   #set CSID0 as an output
-		GPIO.output("CSID0", GPIO.LOW) #set CSID0 (LED) HIGH (On)
+		GPIO.output("CSID0", GPIO.LOW) #set CSID0 (Relay) LOW (Off)
 		return '1'
 
 def reloadFanstate():
-	if (getFanstate()):
-		turnFanON()
-	else: 
-		turnFanOFF()
+	GPIO.setup("CSID0", GPIO.OUT)   #set CSID0 as an output
+	
+	if getFanstate():
+		GPIO.output("CSID0", GPIO.HIGH) #set CSID0 (Relay) HIGH (On)
+	else:
+		updateFanstate(1)
+		GPIO.output("CSID0", GPIO.LOW) #set CSID0 (Relay) LOW (Off)
 
 if __name__ == '__main__':
 	arg = argv[-1]
