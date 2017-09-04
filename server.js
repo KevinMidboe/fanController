@@ -5,6 +5,7 @@ var PythonShell = require('python-shell');
 
 app.use(express.static('public'));
  
+var relayState = false;
 
 // This responds with "Hello World" on the homepage
 app.get('/', function (req, res) {
@@ -49,6 +50,23 @@ app.post('/off', function (req, res) {
 	var options = {
 	  pythonOptions: ['-u'],
 	  args: 'off'
+	};
+
+	PythonShell.run('scripts/fanController.py', options, function (err, results) {
+  	if (err) throw err;
+  	
+  	if (results[0] == true)
+  		res.send('off')
+  	else
+  		res.send('none')
+	});
+})
+
+app.post('/toggle', function (req, res) {
+	relayState = !relayState
+	var options = {
+	  pythonOptions: ['-u'],
+	  args: relayState
 	};
 
 	PythonShell.run('scripts/fanController.py', options, function (err, results) {
