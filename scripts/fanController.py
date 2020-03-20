@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import CHIP_IO.GPIO as GPIO     #import the GPIO library
+# import CHIP_IO.GPIO as GPIO     #import the GPIO library
 import sqlite3
 from sys import argv
 
@@ -27,24 +27,26 @@ def getFanstate():
 def turnFanON():
 	if not getFanstate():
 		updateFanstate(1)
-		GPIO.setup("CSID0", GPIO.OUT)   #set CSID0 as an output
-		GPIO.output("CSID0", GPIO.HIGH) #set CSID0 (Relay) HIGH (On)
+		# GPIO.setup("CSID0", GPIO.OUT)   #set CSID0 as an output
+		# GPIO.output("CSID0", GPIO.HIGH) #set CSID0 (Relay) HIGH (On)
 		return '1'
 
 def turnFanOFF():
 	if getFanstate():
 		updateFanstate(0)
-		GPIO.setup("CSID0", GPIO.OUT)   #set CSID0 as an output
-		GPIO.output("CSID0", GPIO.LOW) #set CSID0 (Relay) LOW (Off)
+		# GPIO.setup("CSID0", GPIO.OUT)   #set CSID0 as an output
+		# GPIO.output("CSID0", GPIO.LOW) #set CSID0 (Relay) LOW (Off)
 		return '1'
 
 def reloadFanstate():
 	GPIO.setup("CSID0", GPIO.OUT)   #set CSID0 as an output
 	
+        '''
 	if getFanstate():
 		GPIO.output("CSID0", GPIO.HIGH) #set CSID0 (Relay) HIGH (On)
 	else:
 		GPIO.output("CSID0", GPIO.LOW) #set CSID0 (Relay) LOW (Off)
+        '''
 
 if __name__ == '__main__':
 	arg = argv[-1]
